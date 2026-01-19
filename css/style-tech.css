@@ -1,0 +1,305 @@
+/* =========================================
+   VISIONTEC FUTURISTIC THEME
+   - Style: Cyberpunk / Tech Premium
+   - Fonts: Orbitron (Headers), Rajdhani (UI), Inter (Body)
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Colors */
+    --bg-void: #02040a;
+    /* Deepest Black */
+    --bg-panel: rgba(10, 15, 30, 0.6);
+    --primary-neon: #00f0ff;
+    /* Cyan Neon */
+    --secondary-neon: #7000ff;
+    /* Purple Neon */
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+
+    /* Effects */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --neon-glow: 0 0 15px rgba(0, 240, 255, 0.5);
+    --purple-glow: 0 0 15px rgba(112, 0, 255, 0.5);
+
+    /* Fonts */
+    --font-display: 'Orbitron', sans-serif;
+    --font-ui: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-void);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 40%);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.font-ui {
+    font-family: var(--font-ui);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #fff, var(--primary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-neon-cyan {
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.text-neon-purple {
+    color: var(--secondary-neon);
+    text-shadow: 0 0 10px rgba(112, 0, 255, 0.5);
+}
+
+/* --- Components --- */
+
+/* Glass Card */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+/* Neon Buttons */
+.btn-tech {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: transparent;
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn-tech::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-neon);
+    transition: all 0.4s ease;
+    z-index: -1;
+    opacity: 0.2;
+    transform: skewX(-20deg);
+}
+
+.btn-tech:hover {
+    background: var(--primary-neon);
+    color: #000;
+    box-shadow: 0 0 20px var(--primary-neon);
+    text-decoration: none;
+}
+
+.btn-tech-purple {
+    border-color: var(--secondary-neon);
+    color: var(--secondary-neon);
+}
+
+.btn-tech-purple:hover {
+    background: var(--secondary-neon);
+    box-shadow: 0 0 20px var(--secondary-neon);
+    color: #fff;
+}
+
+/* Navbar */
+.navbar-tech {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar-tech.scrolled {
+    background: rgba(2, 4, 10, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-neon) !important;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Hero */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    background-image:
+        linear-gradient(rgba(2, 4, 10, 0.3), var(--bg-void)),
+        url('../images/grid-bg.svg');
+    /* Placeholder for grid if needed, or CSS grid */
+    background-size: cover;
+}
+
+.hero-img-wrap {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    z-index: 2;
+}
+
+.hero-img-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.2) 0%, transparent 60%);
+    z-index: -1;
+    filter: blur(40px);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Accordion */
+.accordion-tech .accordion-item {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.accordion-tech .accordion-button {
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.accordion-tech .accordion-button:not(.collapsed) {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.accordion-tech .accordion-body {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+.footer-tech {
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 80px 0 30px;
+}
+
+/* Utils */
+.circle-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-neon);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

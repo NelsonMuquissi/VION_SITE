@@ -1,0 +1,272 @@
+/* VION AUTOMATION CENTER STYLES */
+:root {
+    --vion-neon-cyan: #00f0ff;
+    --vion-neon-purple: #bd00ff;
+    --vion-glass-bg: rgba(255, 255, 255, 0.03);
+    --vion-glass-border: rgba(255, 255, 255, 0.1);
+    --vion-terminal-bg: rgba(10, 10, 15, 0.9);
+}
+
+#automation-center {
+    background: radial-gradient(circle at 50% 50%, #0a0a0f 0%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Grid FX */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Service Cards */
+.vion-card {
+    background: var(--vion-glass-bg);
+    border: 1px solid var(--vion-glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.vion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--vion-neon-cyan);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.vion-card:hover,
+.vion-card.active {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.vion-card:hover::before,
+.vion-card.active::before {
+    opacity: 1;
+}
+
+.vion-card.active {
+    border-color: var(--vion-neon-cyan);
+}
+
+.card-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 240, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.card-icon-wrapper i {
+    color: var(--vion-neon-cyan);
+}
+
+.mini-robot-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.7;
+}
+
+/* Live Demo Panel */
+.demo-panel {
+    background: var(--vion-terminal-bg);
+    border: 1px solid var(--vion-glass-border);
+    border-radius: 12px;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--vion-glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-badge {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.terminal-window {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.log-entry {
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+.log-time {
+    color: var(--vion-neon-purple);
+}
+
+.log-msg {
+    color: #e0e0e0;
+}
+
+.log-success {
+    color: #00ff88;
+}
+
+.log-info {
+    color: var(--vion-neon-cyan);
+}
+
+.log-processing {
+    color: #ffd700;
+}
+
+.panel-timeline {
+    height: 120px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--vion-glass-border);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 33.33%;
+}
+
+.step-dot {
+    width: 14px;
+    height: 14px;
+    background: #333;
+    border: 2px solid #555;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    transition: 0.3s;
+}
+
+.timeline-step.active .step-dot {
+    background: var(--vion-neon-cyan);
+    border-color: #fff;
+    box-shadow: 0 0 10px var(--vion-neon-cyan);
+}
+
+.timeline-step.completed .step-dot {
+    background: #00ff88;
+    border-color: #fff;
+}
+
+.step-label {
+    font-size: 0.75rem;
+    color: #777;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.timeline-step.active .step-label {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Before vs After */
+.comparison-section {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid var(--vion-glass-border);
+}
+
+.stat-card {
+    text-align: center;
+    padding: 15px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .demo-panel {
+        margin-top: 30px;
+        min-height: 400px;
+    }
+}
