@@ -7,20 +7,28 @@
 
 :root {
     /* --- Palette: Deep Void & Neon --- */
-    --bg-void: #0B0F1A;
+    --bg-void: #0b0f14;
+    /* User Rule: Background */
     --bg-deep: #05060a;
+    --primary-green: #3dffd4;
+    /* User Rule: Cor Principal */
     --primary-cyan: #00f0ff;
-    --primary-purple: #7000ff;
-    --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.6);
+    /* User Rule: Auxiliar */
+    --primary-purple: #7a5cff;
+    /* User Rule: Roxo */
+    --text-main: #e6eaf0;
+    /* User Rule: Platinum */
+    --text-muted: rgba(230, 234, 240, 0.6);
 
     /* --- Effects --- */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(11, 15, 20, 0.6);
+    --glass-border: 1px solid rgba(230, 234, 240, 0.08);
+    /* Low contrast border */
     --glass-blur: blur(20px);
 
+    --neon-green-glow: 0 0 20px rgba(61, 255, 212, 0.4);
     --neon-cyan-glow: 0 0 20px rgba(0, 240, 255, 0.4);
-    --neon-purple-glow: 0 0 20px rgba(112, 0, 255, 0.4);
+    --neon-purple-glow: 0 0 20px rgba(122, 92, 255, 0.4);
 
     /* --- Fonts --- */
     --font-heading: 'Orbitron', sans-serif;
@@ -46,7 +54,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 15% 50%, rgba(112, 0, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 15% 50%, rgba(122, 92, 255, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
     z-index: -1;
     pointer-events: none;
@@ -62,6 +70,7 @@ h6 {
     font-family: var(--font-heading);
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    color: var(--text-main);
 }
 
 .font-ui {
@@ -69,15 +78,19 @@ h6 {
 }
 
 .text-gradient-cyan {
-    background: linear-gradient(90deg, #fff, var(--primary-cyan));
+    background: linear-gradient(90deg, var(--primary-green), var(--primary-cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fix lint warning */
 }
 
 .text-gradient-purple {
-    background: linear-gradient(90deg, #fff, var(--primary-purple));
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fix lint warning */
 }
 
 /* --- Components --- */
@@ -87,7 +100,7 @@ h6 {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
-    border: var(--glass-border);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 2rem;
     transition: all 0.4s ease;
@@ -102,26 +115,30 @@ h6 {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .card-glass-premium:hover {
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(0, 240, 255, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 240, 255, 0.1);
+    border-color: rgba(61, 255, 212, 0.3);
+    /* Green hint */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(61, 255, 212, 0.1);
     transform: translateY(-5px);
 }
 
-/* Neon Buttons */
+/* Neon Buttons (Primary) */
 .btn-neon {
     font-family: var(--font-ui);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 12px 30px;
-    background: transparent;
-    color: var(--primary-cyan);
-    border: 1px solid rgba(0, 240, 255, 0.3);
+    background: var(--primary-green);
+    /* Solid Green */
+    color: #0b0f14;
+    /* Black Text */
+    border: 1px solid var(--primary-green);
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -129,6 +146,7 @@ h6 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 0 15px rgba(61, 255, 212, 0.3);
 }
 
 .btn-neon::after {
@@ -138,7 +156,8 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-cyan);
+    background: rgba(255, 255, 255, 0.2);
+    /* Lighten on hover */
     z-index: -1;
     transform: scaleX(0);
     transform-origin: right;
@@ -151,14 +170,17 @@ h6 {
 }
 
 .btn-neon:hover {
-    color: #000;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-    border-color: var(--primary-cyan);
+    color: #0b0f14;
+    box-shadow: 0 0 25px rgba(61, 255, 212, 0.6);
+    border-color: var(--primary-green);
 }
 
+/* Secondary/Purple Button (Outline or muted) */
 .btn-neon-purple {
+    background: transparent;
     color: var(--primary-purple);
-    border-color: rgba(112, 0, 255, 0.3);
+    border: 1px solid rgba(122, 92, 255, 0.3);
+    box-shadow: none;
 }
 
 .btn-neon-purple::after {
@@ -166,9 +188,10 @@ h6 {
 }
 
 .btn-neon-purple:hover {
-    box-shadow: 0 0 20px rgba(112, 0, 255, 0.4);
+    box-shadow: 0 0 20px rgba(122, 92, 255, 0.4);
     border-color: var(--primary-purple);
     color: #fff;
+    background: rgba(122, 92, 255, 0.1);
 }
 
 /* Navbar */
@@ -183,10 +206,20 @@ h6 {
 }
 
 .navbar-future.scrolled {
-    background: rgba(11, 15, 26, 0.85);
+    background: rgba(11, 15, 26, 0.95);
     backdrop-filter: blur(15px);
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
 }
 
 .nav-link {
@@ -196,6 +229,14 @@ h6 {
     color: rgba(255, 255, 255, 0.7) !important;
     text-transform: uppercase;
     position: relative;
+    padding: 10px 0;
+    /* Mobile spacing */
+}
+
+@media (min-width: 992px) {
+    .nav-link {
+        padding: 0;
+    }
 }
 
 .nav-link.active,
@@ -210,12 +251,26 @@ h6 {
     left: 0;
     width: 0%;
     height: 2px;
-    background: var(--primary-cyan);
+    background: var(--primary-green);
     transition: 0.3s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Mobile Menu Glass Effect */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(11, 15, 20, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
 }
 
 

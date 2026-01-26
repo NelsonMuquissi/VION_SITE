@@ -41,6 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Menu Toggle ---
+    const navToggler = document.querySelector('.navbar-toggler');
+    const navCollapse = document.querySelector('.navbar-collapse');
+
+    if (navToggler && navCollapse) {
+        navToggler.addEventListener('click', () => {
+            navCollapse.classList.toggle('show');
+            // Toggle aria-expanded for accessibility
+            const isExpanded = navCollapse.classList.contains('show');
+            navToggler.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking a link
+        navCollapse.querySelectorAll('.nav-link, .btn-neon').forEach(link => {
+            link.addEventListener('click', () => {
+                navCollapse.classList.remove('show');
+                navToggler.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // --- Original Scroll Reveal & Counters ---
     const revealElements = document.querySelectorAll('.reveal-up');
     const revealOnScroll = () => {

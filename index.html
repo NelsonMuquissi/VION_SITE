@@ -17,9 +17,10 @@
 <body>
 
     <!-- 1. Navbar -->
-    <nav class="navbar-future" id="navbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none">
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-future sticky-top" id="navbar">
+        <div class="container">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none navbar-brand">
                 <!-- Logo -->
                 <img src="images/logo sem slogan cinza.png" alt="Vion Logo"
                     style="height: 40px; filter: brightness(0) invert(1);">
@@ -27,16 +28,24 @@
                     style="font-weight: 700; letter-spacing: 1px;">VION</span>
             </a>
 
-            <div class="d-none d-lg-flex gap-4">
-                <a href="#services" class="nav-link">Soluções</a>
-                <a href="#how" class="nav-link">Como Funciona</a>
-                <a href="#benefits" class="nav-link">Resultados</a>
-                <a href="#automation-center" class="nav-link">Demo</a>
-            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: none;">
+                <i class="fa-solid fa-bars text-white fs-2"></i>
+            </button>
 
-            <a href="#contact" class="btn-neon">
-                Fale Conosco
-            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div class="d-flex flex-column flex-lg-row align-items-center gap-4 mt-3 mt-lg-0">
+                    <a href="#services" class="nav-link">Soluções</a>
+                    <a href="#how" class="nav-link">Como Funciona</a>
+                    <a href="#benefits" class="nav-link">Resultados</a>
+                    <a href="#automation-center" class="nav-link">Demo</a>
+
+                    <a href="#contact" class="btn-neon ms-lg-3">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 

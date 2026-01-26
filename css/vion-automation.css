@@ -1,14 +1,14 @@
 /* VION AUTOMATION CENTER STYLES */
 :root {
     --vion-neon-cyan: #00f0ff;
-    --vion-neon-purple: #bd00ff;
+    --vion-neon-purple: #7a5cff;
     --vion-glass-bg: rgba(255, 255, 255, 0.03);
-    --vion-glass-border: rgba(255, 255, 255, 0.1);
-    --vion-terminal-bg: rgba(10, 10, 15, 0.9);
+    --vion-glass-border: rgba(230, 234, 240, 0.1);
+    --vion-terminal-bg: rgba(11, 15, 20, 0.95);
 }
 
 #automation-center {
-    background: radial-gradient(circle at 50% 50%, #0a0a0f 0%, #000000 100%);
+    background: radial-gradient(circle at 50% 50%, #0b0f14 0%, #05070a 100%);
     position: relative;
     overflow: hidden;
 }
@@ -120,8 +120,9 @@
 }
 
 .status-badge {
-    background: rgba(0, 255, 136, 0.1);
-    color: #00ff88;
+    background: rgba(61, 255, 212, 0.1);
+    /* Primary Green opacity */
+    color: #3dffd4;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.75rem;
@@ -135,7 +136,8 @@
     padding: 20px;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    color: #a0a0a0;
+    color: #e6eaf0;
+    /* Text Main */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -151,14 +153,16 @@
 
 .log-time {
     color: var(--vion-neon-purple);
+    /* Purple */
 }
 
 .log-msg {
-    color: #e0e0e0;
+    color: #e6eaf0;
 }
 
 .log-success {
-    color: #00ff88;
+    color: #3dffd4;
+    /* Primary Green */
 }
 
 .log-info {
@@ -214,7 +218,8 @@
 }
 
 .timeline-step.completed .step-dot {
-    background: #00ff88;
+    background: #3dffd4;
+    /* Primary Green */
     border-color: #fff;
 }
 
