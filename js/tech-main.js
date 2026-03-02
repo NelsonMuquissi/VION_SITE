@@ -132,4 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Continuous Typewriter Effect ---
+    const typewriterElement = document.getElementById('vion-typewriter-text');
+    if (typewriterElement) {
+        const fullText = typewriterElement.innerText.trim();
+        let charIndex = 0;
+        const typingSpeed = 50;
+        const pauseBetweenLoops = 4000;
+
+        function type() {
+            if (charIndex < fullText.length) {
+                typewriterElement.innerText = fullText.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(() => {
+                    charIndex = 0;
+                    typewriterElement.innerText = '';
+                    type();
+                }, pauseBetweenLoops);
+            }
+        }
+
+        // Initial setup
+        typewriterElement.style.minHeight = '3em'; // Prevent layout jump
+        typewriterElement.innerText = '';
+        type();
+    }
 });
