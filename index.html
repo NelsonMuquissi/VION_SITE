@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
     <link href="css/style-future.css" rel="stylesheet" />
     <link href="css/vion-automation.css" rel="stylesheet" />
 </head>
@@ -110,109 +111,124 @@
                 <h2 class="display-4 mt-2 mb-3">Tecnologia <span class="text-white">Avançada</span></h2>
             </div>
 
-            <div class="row g-4">
-                <!-- Service 1 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-robot text-gradient-cyan fs-3"></i>
+            <!-- Swiper Slider Container -->
+            <div class="swiper-container solutions-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Service 1 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-robot text-gradient-cyan fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Automação (RPA)</h4>
+                            <p class="text-muted font-ui mb-4">Robôs que executam tarefas repetitivas 24/7 com zero erros.
+                                Libere sua equipe para pensar.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
                         </div>
-                        <h4 class="mb-3">Automação (RPA)</h4>
-                        <p class="text-muted font-ui mb-4">Robôs que executam tarefas repetitivas 24/7 com zero erros.
-                            Libere sua equipe para pensar.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-network-wired text-gradient-purple fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Integrações API</h4>
+                            <p class="text-muted font-ui mb-4">Conectamos seu CRM, ERP e planilhas. Dados fluindo
+                                automaticamente entre todos os sistemas.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-comments text-gradient-cyan fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Chatbots AI</h4>
+                            <p class="text-muted font-ui mb-4">Atendimento inteligente que entende contexto, não apenas
+                                menus. Venda e suporte automático.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-laptop-code text-gradient-purple fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Softwares Web</h4>
+                            <p class="text-muted font-ui mb-4">Desenvolvimento de sistemas sob medida para gargalos
+                                específicos do seu negócio.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-chart-line text-gradient-cyan fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Monitoramento</h4>
+                            <p class="text-muted font-ui mb-4">Dashboards em tempo real para visualizar métricas, erros e
+                                performance da operação.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="swiper-slide card-slide">
+                        <div class="card-glass-premium h-100">
+                            <div class="mb-4 d-flex justify-content-between align-items-start">
+                                <img src="images/vion-service-robot.png"
+                                    style="width: 60px; height: 60px; object-fit: contain;">
+                                <i class="fa-solid fa-brain text-gradient-purple fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Consultoria AI</h4>
+                            <p class="text-muted font-ui mb-4">Análise completa para implementar IA Generativa (GPT) nos
+                                seus processos.</p>
+                            <a href="#contact"
+                                class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
+                                    class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-network-wired text-gradient-purple fs-3"></i>
+                <!-- Slider Controls -->
+                <div class="swiper-footer mt-5 d-flex align-items-center justify-content-between reveal-up">
+                    <div class="swiper-pagination-vion"></div>
+                    <div class="swiper-nav-buttons d-flex gap-3">
+                        <div class="swiper-button-prev-vion swiper-nav-btn">
+                            <i class="fa-solid fa-chevron-left"></i>
                         </div>
-                        <h4 class="mb-3">Integrações API</h4>
-                        <p class="text-muted font-ui mb-4">Conectamos seu CRM, ERP e planilhas. Dados fluindo
-                            automaticamente entre todos os sistemas.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
+                        <div class="swiper-button-next-vion swiper-nav-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-comments text-gradient-cyan fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Chatbots AI</h4>
-                        <p class="text-muted font-ui mb-4">Atendimento inteligente que entende contexto, não apenas
-                            menus. Venda e suporte automático.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-laptop-code text-gradient-purple fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Softwares Web</h4>
-                        <p class="text-muted font-ui mb-4">Desenvolvimento de sistemas sob medida para gargalos
-                            específicos do seu negócio.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-chart-line text-gradient-cyan fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Monitoramento</h4>
-                        <p class="text-muted font-ui mb-4">Dashboards em tempo real para visualizar métricas, erros e
-                            performance da operação.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-cyan"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="col-md-6 col-lg-4 reveal-up">
-                    <div class="card-glass-premium h-100">
-                        <div class="mb-4 d-flex justify-content-between align-items-start">
-                            <img src="images/vion-service-robot.png"
-                                style="width: 60px; height: 60px; object-fit: contain;">
-                            <i class="fa-solid fa-brain text-gradient-purple fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Consultoria AI</h4>
-                        <p class="text-muted font-ui mb-4">Análise completa para implementar IA Generativa (GPT) nos
-                            seus processos.</p>
-                        <a href="#contact"
-                            class="text-decoration-none font-ui text-white fw-bold text-uppercase fs-sm">Ver Detalhes <i
-                                class="fa-solid fa-arrow-right ms-2 text-gradient-purple"></i></a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -606,9 +622,11 @@
 
     <!-- Scripts -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.js"></script>
     <script src="js/tech-main.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/vion-automation.js"></script>
+    <script src="js/services-slider.js"></script>
 </body>
 
 </html>
