@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             action: 'capture_lead'
         },
         {
-            keys: ['humano', 'especialista', 'falar com gente', 'suporte', 'atendente'],
+            keys: ['humano', 'especialista', 'falar com gente', 'suporte', 'atendente', 'whatsapp direct', 'contacto whatsapp'],
             response: 'Entendido. Vou abrir o WhatsApp do nosso consultor para você. Um instante... 👨‍💻',
             action: 'whatsapp'
         },
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keys: ['olá', 'oi', 'começar', 'menu', 'voltar'],
             response: 'Olá! Sou a IA da VION. Como posso ajudar sua empresa hoje? 🚀',
-            chips: ['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços']
+            chips: ['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']
         }
     ];
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (state.name) {
             state.step = 'normal';
             botReply(`Olá de novo, ${state.name}! 👋 Como posso te ajudar?`);
-            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços']);
+            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']);
         } else {
             state.step = 'asking_name';
             botReply('Olá! Sou o Assistente Virtual da VION. 🤖\nQual é o seu nome?');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('vion_user_name', state.name);
             state.step = 'normal';
             botReply(`Prazer, ${state.name}! O que sua empresa precisa hoje?`);
-            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços']);
+            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']);
             return;
         }
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Fallback
         if (!matched) {
             botReply('Desculpe, ainda estou aprendendo. 🧠\nTente clicar em uma das opções abaixo:');
-            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços']);
+            showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']);
         }
     }
 

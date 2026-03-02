@@ -133,6 +133,13 @@ function runSimulation(type) {
         if (logIndex >= data.logs.length) {
             clearInterval(logInterval);
             updateTimeline(3); // Complete
+
+            // Final "Magical" touch
+            setTimeout(() => {
+                addLogEntry(terminal, 'success', "--------------------------------");
+                addLogEntry(terminal, 'success', "TASK COMPLETED SUCCESSFULLY");
+                addLogEntry(terminal, 'success', "SYSTEM STATUS: OPTIMIZED");
+            }, 500);
             return;
         }
 
@@ -144,7 +151,7 @@ function runSimulation(type) {
         if (logIndex === 3) updateTimeline(2);
 
         logIndex++;
-    }, 800); // Speed of typing
+    }, 1200); // Speed of typing - slowed down for realism
 }
 
 function addLogEntry(container, type, msg) {
