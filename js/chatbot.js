@@ -8,49 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSend = document.getElementById('chat-send');
     const chatChips = document.getElementById('chat-chips');
 
-    // --- KNOWLEDGE BASE (Strictly Matched to Chips) ---
+    // --- KNOWLEDGE BASE (Expanded for "Tchissola") ---
     const knowledgeBase = [
-        // 1. SERVICES
+        // 1. BRAND & IDENTITY
         {
-            keys: ['preço', 'valor', 'custo', 'orçamento', 'plano'],
-            response: 'Nossos projetos são personalizados. 💰\n\n- **Chatbots:** A partir de Kz 150.000\n- **RPA/Integrações:** Sob medida.\n\nQuer um orçamento exato?',
-            chips: ['Pedir Orçamento', 'Ver Outros Serviços']
+            keys: ['quem e', 'quem sao', 'sobre', 'vion', 'tchissola'],
+            response: 'A **VION** é uma integradora de soluções inteligentes. Engenharia de processos para quem busca escala real. 🚀⚡\n\nEu, **Tchissola**, sou a manifestação dessa IA, focada em guiar sua jornada de inovação.',
+            chips: ['Ver Serviços', 'Sectores de Atuação', 'Falar com Consultor']
+        },
+        // 2. SERVICES & PRICING
+        {
+            keys: ['preço', 'valor', 'custo', 'orçamento', 'plano', 'investimento'],
+            response: 'Trabalhamos com 3 níveis de aceleração digital:\n\n1. **Essencial:** Automação de 1 fluxo crítico (ex: WhatsApp).\n2. **Pro:** Ecossistema de IA + Integração CRM.\n3. **Enterprise:** Automação total de processos (End-to-End).\n\nQuer saber valores específicos para o seu caso?',
+            chips: ['Solicitar Proposta', 'Como Funciona?']
         },
         {
-            keys: ['rpa', 'robô', 'automação', 'tarefa'],
-            response: 'RPA são "robôs de software" que fazem tarefas chatas por você (clicar, digitar, ler e-mails) 24h por dia. ⚡',
-            chips: ['Exemplos de RPA', 'Pedir Orçamento']
+            keys: ['rpa', 'robô', 'automação', 'tarefa', 'fluxo'],
+            response: 'Nossos robôs (RPA) eliminam 100% dos erros manuais. Eles processam dados, geram relatórios e gerem e-mails enquanto você foca na estratégia. 🦾',
+            chips: ['Casos de Sucesso', 'Sectores']
         },
         {
-            keys: ['exemplo', 'exemplos de rpa', 'caso de uso'],
-            response: 'Aqui estão alguns exemplos reais:\n\n1. **Financeiro:** Emissão automática de notas e boletos.\n2. **RH:** Cadastro de funcionários e folha.\n3. **Vendas:** Disparo de mensagens no WhatsApp.\n\nQual desses te interessa?',
-            chips: ['Financeiro', 'Vendas', 'Falar com Especialista']
+            keys: ['atendimento', 'whatsapp', 'vendas', 'lead'],
+            response: 'Transformamos seu WhatsApp em uma máquina de vendas. Qualificação automática de leads 24/7 e redirecionamento inteligente para seu time. 📈',
+            chips: ['WhatsApp Direct', 'Ver Demonstração']
         },
+        // 3. SECTORS
         {
-            keys: ['chat', 'chatbot', 'atendimento', 'whatsapp'],
-            response: 'Criamos assistentes inteligentes (como eu! 🤖) que atendem seus clientes no WhatsApp e Site, agendam reuniões e tiram dúvidas sozinhos.',
-            chips: ['Quero um Chatbot', 'Ver Preços']
+            keys: ['banco', 'financeiro', 'logistica', 'comercio', 'setores'],
+            response: 'Atuamos fortemente em:\n- **Bancos:** Conciliação automática.\n- **Logística:** Rastreio e alertas.\n- **Retail:** Gestão de stock inteligente.\n\nAlgum desses é o seu sector?',
+            chips: ['Financeiro', 'Logística', 'Retail']
         },
-        // 2. LEAD GEN / ACTIONS
+        // 4. HIGH-INTENT / URGENT (Smart Redirects)
         {
-            keys: ['pedir orçamento', 'quero um chatbot', 'quero orçamento', 'cotação'],
-            response: 'Perfeito! Para eu montar uma proposta, qual seu **WhatsApp ou E-mail**?',
-            action: 'capture_lead'
-        },
-        {
-            keys: ['humano', 'especialista', 'falar com gente', 'suporte', 'atendente', 'whatsapp direct', 'contacto whatsapp'],
-            response: 'Entendido. Vou abrir o WhatsApp do nosso consultor para você. Um instante... 👨‍💻',
+            keys: ['contratar', 'reunião', 'urgente', 'agendar', 'ligar', 'falar agora', 'fechar'],
+            response: 'Entendo a urgência! ⚡ Vou te priorizar para um atendimento direto no WhatsApp do nosso consultor sênior. Abrindo agora...',
             action: 'whatsapp'
         },
+        // 5. GREETINGS & MENU
         {
-            keys: ['demo', 'demonstração'],
-            response: 'Podemos agendar uma demo rápida! Me diga seu nome e contato?',
-            action: 'capture_lead'
-        },
-        // 3. GREETINGS
-        {
-            keys: ['olá', 'oi', 'começar', 'menu', 'voltar'],
-            response: 'Olá! Sou a IA da VION. Como posso ajudar sua empresa hoje? 🚀',
+            keys: ['olá', 'oi', 'ajuda', 'menu', 'voltar'],
+            response: 'Estou aqui! 🤖✨ Escolha um caminho para explorarmos:\n\n- **Automação RPA** (Eficiência)\n- **IA & Chatbots** (Vendas)\n- **Estratégia** (Preços)',
             chips: ['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']
         }
     ];
@@ -73,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function initChatFlow() {
         if (state.name) {
             state.step = 'normal';
-            botReply(`Olá de novo, ${state.name}! 👋 Como posso te ajudar?`);
+            botReply(`Olá de novo, ${state.name}! Sou a **Tchissola**. 👋 Como posso impulsionar seu negócio hoje?`);
             showChips(['Automação RPA', 'Chatbots WhatsApp', 'Ver Preços', 'WhatsApp Direct']);
         } else {
             state.step = 'asking_name';
-            botReply('Olá! Sou o Assistente Virtual da VION. 🤖\nQual é o seu nome?');
+            botReply('Olá! Me chamo **Tchissola**, a Inteligência Artificial da VION. 🤖✨\nComo posso te chamar?');
         }
     }
 

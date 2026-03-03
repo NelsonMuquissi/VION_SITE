@@ -1,0 +1,98 @@
+/* 
+  VION ADVANCED RESPONSIVE STYLES 
+  Premium Mobile-First Optimizations
+*/
+
+/* --- Small Mobile (up to 576px) --- */
+@media (max-width: 576px) {
+
+    /* Hero Typography */
+    .hero-title .d-block:first-child {
+        font-size: 3.5rem !important;
+        /* Smaller VION text */
+        margin-bottom: -10px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .hero-info-box .lead {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+
+    /* Hero Visuals Throttling */
+    .vion-sparks,
+    .neural-dust {
+        opacity: 0.3 !important;
+        /* Reduce density for performance */
+    }
+
+    /* Tchissola Mobile UI */
+    .chat-window {
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        z-index: 10001;
+    }
+
+    .chat-toggle-btn {
+        width: 50px !important;
+        height: 50px !important;
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    .chat-header {
+        padding: 15px 20px !important;
+    }
+
+    .chat-body {
+        height: calc(100% - 130px) !important;
+    }
+
+    .chat-chip {
+        padding: 8px 16px !important;
+        /* Larger touch targets */
+        font-size: 0.85rem !important;
+    }
+
+    /* Spacing Adjustments */
+    section {
+        padding: 60px 0 !important;
+    }
+
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+/* --- Tablets (577px to 991px) --- */
+@media (min-width: 577px) and (max-width: 991px) {
+    .hero-title .d-block:first-child {
+        font-size: 5rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 2rem !important;
+    }
+
+    .chat-window {
+        width: 400px !important;
+        right: 20px !important;
+    }
+}
+
+/* --- High-DPI Optimization --- */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .text-gradient-cyan {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
