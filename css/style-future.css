@@ -1379,10 +1379,17 @@ h6 {
 /* --- VION Chatbot --- */
 .vion-chat-widget {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 100px;
+    right: 30px;
     z-index: 9999;
     font-family: var(--font-body);
+}
+
+@media (max-width: 576px) {
+    .vion-chat-widget {
+        bottom: 80px;
+        right: 20px;
+    }
 }
 
 .chat-toggle-btn {

@@ -599,12 +599,15 @@
                         Desenvolvemos ecossistemas de IA que transformam dados em resultados e automação em vantagem
                         competitiva.
                     </p>
-                    <div class="d-flex flex-column gap-2 text-white-50 font-ui fs-sm">
+                    <div class="d-flex flex-column gap-3 text-white-50 font-ui fs-sm">
                         <div class="d-flex align-items-center gap-2">
-                            <img src="https://flagcdn.com/w20/ao.png" style="width: 20px;"> +244 975 347 393
+                            <i class="fa-brands fa-whatsapp text-success fs-5"></i>
+                            <span>+244 934 589 436</span>
+                            <span class="badge bg-success bg-opacity-25 text-success fs-xs ms-1">Bot</span>
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <img src="https://flagcdn.com/w20/ao.png" style="width: 20px;"> +244 926 283 434
+                            <i class="fa-regular fa-envelope text-info fs-5"></i>
+                            <span>info@vion.ao</span>
                         </div>
                     </div>
                 </div>
@@ -672,43 +675,21 @@
         </div>
     </footer>
 
-    <!-- Chatbot Widget -->
-    <div class="vion-chat-widget">
-        <!-- Chat Window -->
-        <div class="chat-window" id="chat-window">
-            <div class="chat-header">
-                <div class="d-flex align-items-center gap-2">
-                    <span style="width: 8px; height: 8px; background: #00ff88; border-radius: 50%;"></span>
-                    <span class="text-white font-ui fw-bold">Tchissola - Assistente VION</span>
-                </div>
-                <button class="btn btn-sm text-white-50"
-                    onclick="document.getElementById('chat-window').classList.remove('active')">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="chat-body" id="chat-body">
-                <!-- Messages go here -->
-            </div>
-            <div class="chat-chips" id="chat-chips"></div>
-            <div class="chat-footer">
-                <input type="text" class="chat-input" id="chat-input" placeholder="Escreva aqui...">
-                <button class="btn btn-sm btn-primary" id="chat-send"
-                    style="background: var(--primary-cyan); border:none; color: #0b0f14;">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Toggle Button -->
-        <div class="chat-toggle-btn" id="chat-toggle">
-            <i class="fa-solid fa-comment-dots"></i>
-        </div>
+    <!-- Floating Action Buttons -->
+    <div class="vion-float-group">
+        <a href="https://wa.me/244934589436?text=Olá!+Gostaria+de+conhecer+as+soluções+da+VION" 
+           target="_blank" 
+           class="whatsapp-float-btn"
+           data-tooltip="Fale com nosso Bot no WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
     </div>
+        <!-- Fim do conteúdo do site -->
 
     <!-- Scripts -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/tech-main.js"></script>
-    <script src="js/chatbot.js"></script>
     <script src="js/vion-automation.js"></script>
     <script src="js/services-slider.js"></script>
 </body>

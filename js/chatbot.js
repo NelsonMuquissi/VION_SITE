@@ -67,6 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Adiciona botão WhatsApp dentro do Chatbot
+    function addWhatsAppButton() {
+        if (!document.getElementById('chatbot-whatsapp-btn')) {
+            const btn = document.createElement('a');
+            btn.href = 'https://wa.me/244934589436?text=Olá!+Quero+falar+com+um+consultor+da+VION';
+            btn.target = '_blank';
+            btn.className = 'chatbot-whatsapp-btn';
+            btn.id = 'chatbot-whatsapp-btn';
+            btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp';
+            btn.setAttribute('data-tooltip', 'Abrir WhatsApp Bot');
+            chatWindow.appendChild(btn);
+        }
+    }
+    // Mostra botão sempre que o chat abrir
+    chatBtn.addEventListener('click', addWhatsAppButton);
+
     function initChatFlow() {
         if (state.name) {
             state.step = 'normal';
